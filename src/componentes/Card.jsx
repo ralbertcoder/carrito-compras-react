@@ -19,6 +19,7 @@ export const Card = ({ imagen, titulo, descripcion, precio }) => {
                 <h3 className='tarjeta-titulo'>{titulo}</h3>
                 <p className='tarjeta-descripcion'>{descripcion}</p>
                 <p className='tarjeta-precio'>{precio}</p>
+                
                 {added
                     ?
                     <button

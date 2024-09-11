@@ -6,10 +6,10 @@ export const CarritoPage = () => {
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +32,11 @@ export const CarritoPage = () => {
                     </tr>
                 </tbody>
             </table>
+
+            <div className='d-grid gap-2'>
+                <button className='btn btn-primary'>Comprar</button>
+            </div>    
+
         </>
     )
 }
