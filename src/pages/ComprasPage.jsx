@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { Card } from '../componentes/Card.jsx'
+import { ProductosContext } from '../context/ProductosContext.jsx'
+
 
 export const ComprasPage = () => {
 
-    const [productos, setProductos] = useState([])
-
-    const fetchProductos = async () => {
-        const response = await fetch('https://fakestoreapi.com/products')
-        const data = await response.json()
-        console.log(data)
-        setProductos(data)
-    }
-
-    useEffect(() => {
-        fetchProductos()
-
-    }, [])
-
-
+    const { productos } = useContext( ProductosContext )
 
     return (
         <>
@@ -26,18 +14,14 @@ export const ComprasPage = () => {
 
             {productos.map(producto => (
                 <Card
+                    key={producto.id}
                     imagen={producto.image}
                     titulo={producto.title}
                     descripcion={producto.description}
                     precio={producto.price}
                 >
-
                 </Card>
-
-            ))}
-
-
-            
+            ))}           
         </>
     )
 }

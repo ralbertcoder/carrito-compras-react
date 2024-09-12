@@ -3,7 +3,7 @@ import React from 'react'
 export const CarritoPage = () => {
     return (
         <>
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
@@ -27,7 +27,7 @@ export const CarritoPage = () => {
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
+                        <td colSpan="2">Larry the Bird</td>
                         <td>@twitter</td>
                     </tr>
                 </tbody>

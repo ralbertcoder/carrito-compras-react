@@ -4,10 +4,12 @@ import { NavBar } from './componentes/NavBar'
 import { ComprasPage } from './pages/ComprasPage'
 import { CarritoPage } from './pages/CarritoPage'
 import { Navigate } from 'react-router-dom'
+import { ProductosProvider } from './context/ProductosProvider'
+
 
 export const CarritoApp = () => {
   return (
-    <>
+    <ProductosProvider>
       <NavBar></NavBar>
       <div className='container'>
       <Routes>
@@ -18,6 +20,6 @@ export const CarritoApp = () => {
        
       </Routes>
       </div>
-    </>
+      </ProductosProvider>
   )
 }
