@@ -5,21 +5,24 @@ import { ComprasPage } from './pages/ComprasPage'
 import { CarritoPage } from './pages/CarritoPage'
 import { Navigate } from 'react-router-dom'
 import { ProductosProvider } from './context/ProductosProvider'
+import { CarritoProvider } from './context/CarritoProvider'
 
 
 export const CarritoApp = () => {
   return (
     <ProductosProvider>
-      <NavBar></NavBar>
-      <div className='container'>
-      <Routes>
-        
-          <Route path="/carrito" element={<CarritoPage></CarritoPage>}></Route>
-          <Route path="/compras" element={<ComprasPage></ComprasPage>}></Route>
-          <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
-       
-      </Routes>
-      </div>
-      </ProductosProvider>
+      <CarritoProvider>
+        <NavBar></NavBar>
+        <div className='container'>
+          <Routes>
+
+            <Route path="/carrito" element={<CarritoPage></CarritoPage>}></Route>
+            <Route path="/compras" element={<ComprasPage></ComprasPage>}></Route>
+            <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
+
+          </Routes>
+        </div>
+      </CarritoProvider>
+    </ProductosProvider>
   )
 }
